@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const Opcao = styled.li`
     font-size: 16px; 
@@ -14,14 +15,14 @@ const Opcao = styled.li`
 const Opcoes = styled.ul`
   display: flex;
 `
-const textoOpcoes = ['CATEGORIAS', 'FAVORITOS', 'MINHA ESTANTE'] // lista com o nome das opçoes 
+const textoOpcoes = ['CATEGORIAS', 'FAVORITOS', 'ESTANTE'] // lista com o nome das opçoes 
 
 function OpcoesHeader( ){
     return(
         <Opcoes>
         {/* funçao que vai criar a lista de opçoes e vai passar por cada um da textoOpcoes */}
           {textoOpcoes.map( (texto) => (
-            <Opcao><p>{texto}</p></Opcao>
+            <Link to={`/${texto.toLowerCase}`}><Opcao><p>{texto}</p></Opcao></Link>
           ) )}
        </Opcoes>
     )
