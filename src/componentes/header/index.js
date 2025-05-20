@@ -2,6 +2,7 @@ import Logo from '../logo'
 import OpcoesHeader from '../opcoes-header'
 import IconesHeader from '../Icones-header'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 // crio o estilo do header 
 const HeaderContainer = styled.header`
@@ -14,7 +15,10 @@ function Header(){
     return (
         <HeaderContainer>
              {/* componente importado da logo */}
-            <Logo/>
+             <Link to='/' >
+                <Logo/>         
+             </Link>
+
             <OpcoesHeader/>
             <IconesHeader/>
         </HeaderContainer>
